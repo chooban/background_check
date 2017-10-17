@@ -11,7 +11,7 @@ start_time = time.time() ##
 #SEGMENTED LINE: [0]Promoter 	[1]TAG 	[2SampleName 	[3]Leader 	[4]LeaderLen 	[5]SegmentSeq 	[6]SegmentLen 	[7]Segment# 	[8]SegmentPostn
 
 #get leader list
-infile = '/mnt/ris-fas1a/linux_groups2/fantom5/capsnatch/source_data/raw_files/GCAAAAGCAGG_CAGE_Sequences_segmented.txt'
+infile = ''
 lead = 3
 
 #list of leaders in order of abundance
@@ -33,10 +33,9 @@ for l in leader:
 #print("--- %s seconds ---" % (time.time() - start_time)) 
 #44.6813750267 second
 
-#/mnt/ris-fas1a/linux_groups2/fantom5/capsnatch
 #list of files
 file_list = []
-path = '/mnt/ris-fas1a/linux_groups2/fantom5/Clustering/FLU_TIMECOURSE/bamfiles/'
+path = ''
 dirs = os.listdir(path)
 for fle in dirs:
 	if '.sam' in fle:
@@ -59,7 +58,7 @@ def Locate_Leaders(filename):
 	#in_file = os.path.abspath(filename)
 	donor =  (re.split('%20|%3a|%29', filename))[8]
 	sample =  (re.split('%20|%3a|%29', filename))[10]
-	output = ('/mnt/ris-fas1a/linux_groups2/fantom5/capsnatch/%s_%s_leader.tsv')%(sample,donor)
+	output = ('%s_%s_leader.tsv')%(sample,donor)
 	#if os.path.isfile(output) == False:
 	#	print ('%s_%s_leader.tsv has been created')%(sample,donor)
 	o = open(output, 'ab+')
