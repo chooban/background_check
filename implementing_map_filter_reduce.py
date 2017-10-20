@@ -30,7 +30,7 @@ for l in leader:
 	leaders.append(l[0])
 	leader_counts.append(l[1])
 #leader_counts= sorted(leader.items())
-#print("--- %s seconds ---" % (time.time() - start_time)) 
+#print("--- %s seconds ---" % (time.time() - start_time))
 #44.6813750267 second
 
 #list of files
@@ -79,4 +79,4 @@ def Locate_Leaders(filename):
 pool = mp.Pool(processes=12)
 results = pool.map(Locate_Leaders, file_list)
 
-#0-1000 done :) 
+#0-1000 done :)
